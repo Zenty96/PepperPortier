@@ -11,7 +11,7 @@ U10;Verwaltung;
 U11;;
 U12;Hausbetrieb;
 U13;;
-U15;Geräte;
+U15;GerÃ¤te;
 U16;Labor WIW Technische Physik;
 U17;Labor;
 U18;;
@@ -26,12 +26,12 @@ U35;Plotterraum;
 U36;;
 U37;;
 U42a;Lagerraum;
-001;Saniraum, Sanitätsraum;
+001;Saniraum, SanitÃ¤tsraum;
 002;Kantine, Mensa;
-003;Büro;Herr Dipl.-Ing. (FH) Andreas Brendsen, Herr Dipl.-Ing. (FH) Hartmut Finkbeiner, Herr B. Eng. Jochen Rieker
+003;BÃ¼ro;Herr Dipl.-Ing. (FH) Andreas Brendsen, Herr Dipl.-Ing. (FH) Hartmut Finkbeiner, Herr B. Eng. Jochen Rieker
 004;Labor;
 005;Labor;
-006;Labor;Frau M. Sc. Prof. Antje Katona, Herr Prof. Dr.-Ing. Jürgen Schwellbach
+006;Labor;Frau M. Sc. Prof. Antje Katona, Herr Prof. Dr.-Ing. JÃ¼rgen Schwellbach
 007;Labor;Herr Prof. Dr.-Ing. Martin Hornberger
 008;Labor;Herr Prof. Dr.-Ing. Wolf Burger
 009;Labor;Herr Prof. Dr.-Ing. Bernhard Rief
@@ -39,37 +39,37 @@ U42a;Lagerraum;
 016;Labor;Herr Prof. Dr.-Ing. Anton R. Schweizer
 017;Labor;Frau Birgit Englert, Frau Lucia Ruggaber
 018;Labor;
-019;Labor;Herr Prof. Dr.-Ing. Jürgen Gundrum
+019;Labor;Herr Prof. Dr.-Ing. JÃ¼rgen Gundrum
 020;Vorlesung;
 021;Vorlesung;
-022;Geräte;
+022;GerÃ¤te;
 023;Hausverwaltung;Herr Hartmut Maier
 025;Forum;
 031;Labor;
 032;Labor;
 033;Labor;
-034;Labor, Hebebühne;
-035;Groß-Vorlesungsraum, Helmut-Günther-Audimax, Audimax;
-101;Büro;Frau MBA Andrea Rohrer
+034;Labor, HebebÃ¼hne;
+035;GroÃŸ-Vorlesungsraum, Helmut-GÃ¼nther-Audimax, Audimax;
+101;BÃ¼ro;Frau MBA Andrea Rohrer
 102;Vorlesung;
 103;Labor;
-104;Büro;Frau Maria Ade, Herr B. Eng. Timo Bangert, Herr Dipl.-Ing. (FH) Alexander Haußer, Herr Dipl.-Ing. Georg Schulze Beiering
+104;BÃ¼ro;Frau Maria Ade, Herr B. Eng. Timo Bangert, Herr Dipl.-Ing. (FH) Alexander HauÃŸer, Herr Dipl.-Ing. Georg Schulze Beiering
 105;;
 105a;;
-106;;Frau M. A. Kerstin Faißt, Frau Sonja Hiller-Pollak
-107;Büro;Herr Dipl.-Ing. (FH) Ulrich Schneider, Herr Dipl.-Ing. (FH/BA) Markus Steppacher
-108;Büro;Herr Dipl.-Ing. mult. Hans-Peter Pollak
-109;Büro;Herr Prof. Dr.-Ing. Burkhard Ulrich, Herr Prof. Dr.-Ing. Klaus-Dieter Welker
-109a;Büro;Frau Kalbacher
-110;Büro;Frau B. A. Anja Schuon
-116;Büro;Herr Prof. Dr. rer. nat. Martin Plümicke, Herr B. Sc. Andreas Stadelmeier, Herr Prof. Dr. phil. Antonius van Hoof
-117;Büro;Frau Elke Hils-Guhl
-118;Büro;Herr Prof. Dr.-Ing. Olaf Herden
-119;Büro;Herr M. Sc. Prof. Dipl.-Ing. Alfred Geisel, Herr Prof. Dr.-Ing. Christoph Zender
+106;;Frau M. A. Kerstin FaiÃŸt, Frau Sonja Hiller-Pollak
+107;BÃ¼ro;Herr Dipl.-Ing. (FH) Ulrich Schneider, Herr Dipl.-Ing. (FH/BA) Markus Steppacher
+108;BÃ¼ro;Herr Dipl.-Ing. mult. Hans-Peter Pollak
+109;BÃ¼ro;Herr Prof. Dr.-Ing. Burkhard Ulrich, Herr Prof. Dr.-Ing. Klaus-Dieter Welker
+109a;BÃ¼ro;Frau Kalbacher
+110;BÃ¼ro;Frau B. A. Anja Schuon
+116;BÃ¼ro;Herr Prof. Dr. rer. nat. Martin PlÃ¼micke, Herr B. Sc. Andreas Stadelmeier, Herr Prof. Dr. phil. Antonius van Hoof
+117;BÃ¼ro;Frau Elke Hils-Guhl
+118;BÃ¼ro;Herr Prof. Dr.-Ing. Olaf Herden
+119;BÃ¼ro;Herr M. Sc. Prof. Dipl.-Ing. Alfred Geisel, Herr Prof. Dr.-Ing. Christoph Zender
 120;Vorlesung;
 121;Vorlesung;
 122;Labor;
-123;Büro;Frau Simone Köhler
+123;BÃ¼ro;Frau Simone KÃ¶hler
 131;Labor;
 132;Labor;
 133;Labor;
@@ -78,20 +78,20 @@ U42a;Lagerraum;
 136;Vorlesung;
 137;;
 138;;
-201;Bibliothek;Frau Dipl.-Bibl. (FH) Julitta Aktay, Frau B. A. Helen Müller
+201;Bibliothek;Frau Dipl.-Bibl. (FH) Julitta Aktay, Frau B. A. Helen MÃ¼ller
 202;Vorlesung;
 203;Vorlesung;
 204;Konferenz;
-205;Büro;Herr Prof. Dr. Hartmuth Diery
-206;Büro;Frau Birgit Raible
-207;Büro;Frau M. Sc. Annika Blessing, Frau Dipl.-Verw. Wirtin (FH) Irene Straub
-208;Büro;Frau Katja Brenner, Frau Sengül Turan
-209;Teeküche;
+205;BÃ¼ro;Herr Prof. Dr. Hartmuth Diery
+206;BÃ¼ro;Frau Birgit Raible
+207;BÃ¼ro;Frau M. Sc. Annika Blessing, Frau Dipl.-Verw. Wirtin (FH) Irene Straub
+208;BÃ¼ro;Frau Katja Brenner, Frau SengÃ¼l Turan
+209;TeekÃ¼che;
 210;Kopierer;
-216;Büro;Herr Prof. Dipl.-HdL. Hans-Georg Kocher, Frau M. A. Prof. Dr. Katja Stamer
-217;Büro;Frau Birgit Alber
-218;Büro;Herr Prof. Dr.-Ing. Rolf Richterich
-219;Büro;Herr Prof. Dr.-Ing. Ulf-Rüdiger Müller, Herr Prof. Dr.-Ing. Florian Schleidgen
+216;BÃ¼ro;Herr Prof. Dipl.-HdL. Hans-Georg Kocher, Frau M. A. Prof. Dr. Katja Stamer
+217;BÃ¼ro;Frau Birgit Alber
+218;BÃ¼ro;Herr Prof. Dr.-Ing. Rolf Richterich
+219;BÃ¼ro;Herr Prof. Dr.-Ing. Ulf-RÃ¼diger MÃ¼ller, Herr Prof. Dr.-Ing. Florian Schleidgen
 220;Vorlesung;
 221;Vorlesung;
 222;Vorlesung;
@@ -104,5 +104,5 @@ U42a;Lagerraum;
 237;Vorlesung;
 238;;
 M01;Messtechniklabor;
-M02;Prüfstand 2;
-M03;Prüfstand 1;
+M02;PrÃ¼fstand 2;
+M03;PrÃ¼fstand 1;

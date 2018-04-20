@@ -14,7 +14,11 @@ def main():
     liste = csvreader.readCSV()
 
     # liste beinhaltet alle Raumnummer mit Informationen
-    # -> Liste an RaumInformationen erstellen
+    listeRauminformationen = []
+    var = Hilfsmittel.ListenOperationen()
+    listeRauminformationen = var.getListeRauminformationen(liste)
 
+    # Test, ob alles da ist (108 Räume)
+    print len(listeRauminformationen)
 
 main()

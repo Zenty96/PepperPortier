@@ -1,4 +1,5 @@
 import csv, sys
+import Klassen
 
 class CSVReader(object):
     def __init__(self):
@@ -15,3 +16,26 @@ class CSVReader(object):
             except csv.Error as e:
                 sys.exit('file %s, line %d: %s' % (filename, reader.line_num, e))
             return liste
+
+class ListenOperationen(object):
+    def __init__(self):
+        pass
+
+    def getListeRauminformationen(self, liste):
+        listeRauminformationen = []
+        for info in liste:
+            # String splitten
+            nummer, zweck, personen = info.split(';')
+
+            listeZwecke = []
+            listeZwecke += zweck.split('&')
+
+            listePersonen = []
+            listePersonen += personen.split('&')
+            # Werte zuweisen
+            elementRaumInfos = Klassen.RaumInformationen(nummer, listeZwecke, listePersonen)
+
+            # Elemente in Liste speichern
+            listeRauminformationen.append(elementRaumInfos)
+
+        return listeRauminformationen

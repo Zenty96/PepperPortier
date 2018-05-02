@@ -32,6 +32,7 @@ class ListenOperationen(object):
 
             listePersonen = []
             listePersonen += personen.split('&')
+            
             # Werte zuweisen
             elementRaumInfos = Klassen.RaumInformationen(nummer, listeZwecke, listePersonen)
 

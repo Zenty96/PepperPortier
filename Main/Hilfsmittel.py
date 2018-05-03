@@ -32,7 +32,7 @@ class ListenOperationen(object):
 
             listePersonen = []
             listePersonen += personen.split('&')
-            
+
             # Werte zuweisen
             elementRaumInfos = Klassen.RaumInformationen(nummer, listeZwecke, listePersonen)
 
@@ -40,3 +40,10 @@ class ListenOperationen(object):
             listeRauminformationen.append(elementRaumInfos)
 
         return listeRauminformationen
+
+class Bild(object):
+    def __init__(self):
+        pass
+
+    def anzeigen(self, raumnummer):
+        pass

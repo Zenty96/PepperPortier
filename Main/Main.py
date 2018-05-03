@@ -3,39 +3,44 @@ import Klassen
 import Hilfsmittel
 import Verbindung
 import Konstanten
-from naoqi import ALProxy
+import Strings
+import Interaktion
 
 def main():
-    var = Klassen.RaumInformationen('U01', ['Vorlesung'], ['Herr Herden'])
-    rNum = var.getRaumNummer()
-    rPer = var.getPersonen()
-    rZweck = var.getRaumZweck()
-
-    print('Im Raum mit der Nummer %s sitzt %s, weil %s.') % (rNum, rPer, rZweck)
-
-    csvreader = Hilfsmittel.CSVReader()
-    liste = csvreader.readCSV()
-
-    # liste beinhaltet alle Raumnummer mit Informationen
-    listeRauminformationen = []
-    var = Hilfsmittel.ListenOperationen()
-    listeRauminformationen = var.getListeRauminformationen(liste)
-
-    # Test, ob alles da ist (108 Räume)
-    #print len(listeRauminformationen)
+    rNum = '345' # Test
 
     verb = Verbindung.Verbindung();
-    if(verb.aufbauen()):
-        print('Verbindung aufgebaut')
+    session = verb.aufbauen("German")
 
-    # mit Pepper testen
-    #ri = Konstanten.RoboterInformationen()
-    #tts = ALProxy("ALTextToSpeech", ri.getIP(), ri.getPort())
-    #tts.say("Hello, world!")
+    if (session == False):
+        print("Fehler beim Aufbauen der Verbindung")
+        exit() # Beenden
 
-    #Topic-File einbinden (Verbindung zu Pepper (da muss es hochgeladen sein) oder hier eintippen (eigene Datei in Ressourcen))
+    weiter = True
+    counter = 0
+    while(weiter):
+        # Input vom Benutzer
+        eingabe = Interaktion.Eingabe()
+        nutzerEingabe = eingabe.getNutzerInput(counter)
+        # Counter, sodass das Setzen vom Vokabular nur einmal passiert
+        counter = counter + 1
 
-    # Bild anzeigen (muss auf Pepper hochgeladen sein)
+        print(nutzerEingabe)
 
+        if (nutzerEingabe == "Beenden" or nutzerEingabe == "Ende"):
+            # zum Beenden der Schleife
+            weiter = False
+            print("Ende angefragt")
+            exit()
+
+        # Nummer -> kein Problem, weitergeben
+        # Name -> Nummer suchen, dann weitergeben
+
+        # Antwort von Pepper
+        antwort = Interaktion.Antwort()
+        antwort.sageWegbeschreibung(nutzerEingabe)
+
+        bild = Hilfsmittel.Bild()
+        bild.anzeigen(nutzerEingabe)
 
 main()

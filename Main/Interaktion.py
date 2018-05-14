@@ -11,6 +11,7 @@ class Antwort(object):
 
     def sageWegbeschreibung(self, eingabe):
 
+        print("Eingabe: " + eingabe)
         ri = Konstanten.RoboterInformationen()
         tts = ALProxy("ALTextToSpeech", ri.getIP(), ri.getPort())
 
@@ -22,7 +23,7 @@ class Antwort(object):
             rNum = var.getRaumnummerZuPerson(eingabe)
             print(rNum)
 
-            # TODO
+            # TODO ganzer Name
             weg = weg + "Das Büro von " + eingabe + "hat die Raumnummer " + rNum
         else:
             # Raumnummer -> Weitergabe
@@ -32,8 +33,12 @@ class Antwort(object):
         weg = weg + beschreibung.getWegbeschreibung(rNum)
 
         if (weg.strip() != ""):
+            # TODO PDF anzeigen
+            #var = Hilfsmittel.PDF()
+            #var.anzeigen(rNum)
             # Täblet, damit es wie im Englischen klingt
             tts.say(weg + "...Auf meinem Täblet habe ich den Raum für Sie markiert.")
+            #var.verstecken()
         else:
             tts.say("Tut mir leid, ich kenne den Weg nicht.")
 
@@ -58,7 +63,6 @@ class Eingabe(object):
 
         ri = Konstanten.RoboterInformationen()
         asr = self.__setVokabular(ri, counter)
-
         asr.subscribe("Portier_Test")
         time.sleep(7)
 
@@ -77,7 +81,7 @@ class Eingabe(object):
         if (counter == 0):
             # nur einmal beim ersten Mal
             vocabulary = self.__getListeRaumnummern()
-            vocabulary.append(self.__getListeNamen())
+            vocabulary = vocabulary + self.__getListeNamen()
             vocabulary.append('Ende') # Schlüsselwort, um die Abfrage zu beenden
             asr.setVocabulary(vocabulary, False) # True: achtet nur auf die Wörter aus dem Vokabular
 

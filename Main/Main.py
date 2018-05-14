@@ -37,7 +37,8 @@ def main():
         antwort = Interaktion.Antwort()
         antwort.sageWegbeschreibung(nutzerEingabe)
 
-        bild = Hilfsmittel.Bild()
-        bild.anzeigen(nutzerEingabe)
+        # TODO
+        #bild = Hilfsmittel.Bild()
+        #bild.anzeigen(nutzerEingabe)
 
-#main()
+main()

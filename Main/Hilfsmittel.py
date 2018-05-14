@@ -1,6 +1,9 @@
+# -*- coding: utf-8 -*-
 import csv, sys
 import Klassen
 import Hilfsmittel
+import time
+import qi
 
 class CSVReader(object):
     def __init__(self):
@@ -42,7 +45,7 @@ class ListenOperationen(object):
 
         return listeRauminformationen
 
-    def __getRaumnummerZuPerson(self, person):
+    def getRaumnummerZuPerson(self, person):
         csvreader = Hilfsmittel.CSVReader()
         liste = csvreader.readCSV()
         listeRaumInfos = self.getListeRauminformationen(liste)
@@ -58,9 +61,22 @@ class ListenOperationen(object):
 
         return rNum
 
-class Bild(object):
+class PDF(object):
     def __init__(self):
-        pass
+        session = qi.Session()
+        self.__tabletService = session.service("ALTabletService")
+
+    def __getTabeltService(self):
+        return self.__tabletService
 
     def anzeigen(self, raumnummer):
-        pass
+        tblService = __getTabeltService()
+        # TODO korrekter Pfad
+        pfadImage = raumnummer + ".pdf"
+        tblService.loadUrl(pfadImage)
+        tblService.showImageNoCache(pfadImage)
+
+    def verstecken(self):
+        time.sleep(10)
+        tblService = __getTabeltService()
+        tblService.hideImage()

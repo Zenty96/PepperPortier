@@ -4,6 +4,7 @@ import Klassen
 import Hilfsmittel
 import time
 import qi
+import Konstanten
 
 class CSVReader(object):
     def __init__(self):
@@ -62,21 +63,17 @@ class ListenOperationen(object):
         return rNum
 
 class PDF(object):
-    def __init__(self):
-        session = qi.Session()
+    def __init__(self, session):
         self.__tabletService = session.service("ALTabletService")
 
-    def __getTabeltService(self):
-        return self.__tabletService
-
     def anzeigen(self, raumnummer):
-        tblService = __getTabeltService()
+        tblService = self.__tabletService
         # TODO korrekter Pfad
-        pfadImage = raumnummer + ".pdf"
-        tblService.loadUrl(pfadImage)
-        tblService.showImageNoCache(pfadImage)
+        pfadImage = "http://10.1.1.68/apps/portierapp/pdfs/" + raumnummer + ".pdf"
+        print(pfadImage)
+        tblService.showWebview(pfadImage)
 
     def verstecken(self):
         time.sleep(10)
-        tblService = __getTabeltService()
-        tblService.hideImage()
+        tblService = self.__tabletService
+        tblService.hideWebview()

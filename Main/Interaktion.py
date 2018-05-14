@@ -6,8 +6,8 @@ import Hilfsmittel
 from naoqi import ALProxy
 
 class Antwort(object):
-    def __init__(self):
-        pass
+    def __init__(self, session):
+        self.__session = session
 
     def sageWegbeschreibung(self, eingabe):
 
@@ -34,11 +34,11 @@ class Antwort(object):
 
         if (weg.strip() != ""):
             # TODO PDF anzeigen
-            #var = Hilfsmittel.PDF()
-            #var.anzeigen(rNum)
+            bild = Hilfsmittel.PDF(self.__session)
+            bild.anzeigen(rNum)
             # Täblet, damit es wie im Englischen klingt
             tts.say(weg + "...Auf meinem Täblet habe ich den Raum für Sie markiert.")
-            #var.verstecken()
+            bild.verstecken()
         else:
             tts.say("Tut mir leid, ich kenne den Weg nicht.")
 

@@ -5,6 +5,7 @@ import Verbindung
 import Konstanten
 import Strings
 import Interaktion
+import time
 
 def main():
     rNum = '345' # Test
@@ -34,11 +35,8 @@ def main():
             exit()
 
         # Antwort von Pepper
-        antwort = Interaktion.Antwort()
+        antwort = Interaktion.Antwort(session)
         antwort.sageWegbeschreibung(nutzerEingabe)
 
-        # TODO
-        #bild = Hilfsmittel.Bild()
-        #bild.anzeigen(nutzerEingabe)
 
 main()

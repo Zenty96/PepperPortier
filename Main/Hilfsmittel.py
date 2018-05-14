@@ -1,5 +1,6 @@
 import csv, sys
 import Klassen
+import Hilfsmittel
 
 class CSVReader(object):
     def __init__(self):
@@ -40,6 +41,22 @@ class ListenOperationen(object):
             listeRauminformationen.append(elementRaumInfos)
 
         return listeRauminformationen
+
+    def __getRaumnummerZuPerson(self, person):
+        csvreader = Hilfsmittel.CSVReader()
+        liste = csvreader.readCSV()
+        listeRaumInfos = self.getListeRauminformationen(liste)
+
+        rNum = 0
+
+        for raum in listeRaumInfos:
+            personenListe = raum.getPersonen()
+            for p in personenListe:
+                if (person in p):
+                    rNum = raum.getRaumNummer()
+                    return rNum
+
+        return rNum
 
 class Bild(object):
     def __init__(self):

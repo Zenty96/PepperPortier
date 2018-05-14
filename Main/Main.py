@@ -33,9 +33,6 @@ def main():
             print("Ende angefragt")
             exit()
 
-        # Nummer -> kein Problem, weitergeben
-        # Name -> Nummer suchen, dann weitergeben
-
         # Antwort von Pepper
         antwort = Interaktion.Antwort()
         antwort.sageWegbeschreibung(nutzerEingabe)
@@ -43,4 +40,4 @@ def main():
         bild = Hilfsmittel.Bild()
         bild.anzeigen(nutzerEingabe)
 
-main()
+#main()

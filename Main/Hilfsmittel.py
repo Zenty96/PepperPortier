@@ -76,7 +76,6 @@ class Bild(object):
 
     def anzeigen(self, raumnummer):
         tblService = self.__tabletService
-        # TODO korrekte Größe
         #pfadPDF = "http://10.1.1.68/apps/portierapp/pdfs/" + raumnummer + ".pdf"
         #tblService.showWebview(pfadPDF)
         pfadImage = "http://10.1.1.68/apps/portierapp/images/" + raumnummer + ".jpg"
@@ -85,4 +84,4 @@ class Bild(object):
     def verstecken(self):
         time.sleep(10)
         tblService = self.__tabletService
-        tblService.hideWebview()
+        tblService.hideImage()

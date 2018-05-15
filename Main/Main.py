@@ -26,8 +26,6 @@ def main():
         # Counter, sodass das Setzen vom Vokabular nur einmal passiert
         counter = counter + 1
 
-        print(nutzerEingabe)
-
         if (nutzerEingabe == "Beenden" or nutzerEingabe == "Ende"):
             # zum Beenden der Schleife
             weiter = False

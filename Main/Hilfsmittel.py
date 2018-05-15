@@ -62,16 +62,25 @@ class ListenOperationen(object):
 
         return rNum
 
-class PDF(object):
+    def formatiereRaumnummerZuString(self, rNum):
+        ausgabe = ""
+
+        for zeichen in rNum:
+            ausgabe = ausgabe + zeichen + " "
+
+        return ausgabe
+
+class Bild(object):
     def __init__(self, session):
         self.__tabletService = session.service("ALTabletService")
 
     def anzeigen(self, raumnummer):
         tblService = self.__tabletService
-        # TODO korrekter Pfad
-        pfadImage = "http://10.1.1.68/apps/portierapp/pdfs/" + raumnummer + ".pdf"
-        print(pfadImage)
-        tblService.showWebview(pfadImage)
+        # TODO korrekte Größe
+        #pfadPDF = "http://10.1.1.68/apps/portierapp/pdfs/" + raumnummer + ".pdf"
+        #tblService.showWebview(pfadPDF)
+        pfadImage = "http://10.1.1.68/apps/portierapp/images/" + raumnummer + ".jpg"
+        tblService.showImage(pfadImage)
 
     def verstecken(self):
         time.sleep(10)

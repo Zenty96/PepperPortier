@@ -21,20 +21,23 @@ class Antwort(object):
             # Name -> Raumnummer suchen, dann Weitergabe zur Wegbeschreibung
             var = Hilfsmittel.ListenOperationen()
             rNum = var.getRaumnummerZuPerson(eingabe)
-            print(rNum)
-
+            rNumString = var.formatiereRaumnummerZuString(rNum)
             # TODO ganzer Name
-            weg = weg + "Das Büro von " + eingabe + "hat die Raumnummer " + rNum
+            ein = Eingabe()
+            ganzerName = ein.getGanzenNamen(eingabe)
+            if (ganzerName.strip() != ""):
+                weg = weg + "Das Büro von " + ganzerName + " hat die Raumnummer " + rNumString + "..."
+                print(weg)
         else:
             # Raumnummer -> Weitergabe
             rNum = eingabe
+            weg = weg + "Sie suchen den Raum mit der Nummer " + rNum + "..."
 
         beschreibung = Strings.Wegbeschreibung()
         weg = weg + beschreibung.getWegbeschreibung(rNum)
 
         if (weg.strip() != ""):
-            # TODO PDF anzeigen
-            bild = Hilfsmittel.PDF(self.__session)
+            bild = Hilfsmittel.Bild(self.__session)
             bild.anzeigen(rNum)
             # Täblet, damit es wie im Englischen klingt
             tts.say(weg + "...Auf meinem Täblet habe ich den Raum für Sie markiert.")
@@ -75,13 +78,13 @@ class Eingabe(object):
 
     def __setVokabular(self, ri, counter):
         asr = ALProxy("ALSpeechRecognition", ri.getIP(), ri.getPort())
-        asr.setLanguage("German")
         asr.pause(True)
+        asr.setLanguage("German")
 
         if (counter == 0):
             # nur einmal beim ersten Mal
             vocabulary = self.__getListeRaumnummern()
-            vocabulary = vocabulary + self.__getListeNamen()
+            vocabulary = vocabulary + self.__getListeNachnamen()
             vocabulary.append('Ende') # Schlüsselwort, um die Abfrage zu beenden
             asr.setVocabulary(vocabulary, False) # True: achtet nur auf die Wörter aus dem Vokabular
 
@@ -109,7 +112,7 @@ class Eingabe(object):
 
         return listeRaumnummern
 
-    def __getListeNamen(self):
+    def __getListeNachnamen(self):
         listeRauminformationen = self.__getListeRaumInfos()
 
         listeNamen = []
@@ -123,3 +126,13 @@ class Eingabe(object):
                     listeNamen.append(nachname)
 
         return listeNamen
+
+    def getGanzenNamen(self, nachname):
+        listeRauminformationen = self.__getListeRaumInfos()
+
+        listeNamen = []
+        for name in listeRauminformationen:
+            personen = name.getPersonen() # Liste an Personen
+            for p in personen:
+                if (nachname in p):
+                    return p

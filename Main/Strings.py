@@ -36,7 +36,7 @@ class Wegbeschreibung(object):
             wegbeschreibung = "Gehen Sie dann den Gang nach rechts."
         elif (16 <= nummer <= 23):
             wegbeschreibung = "Gehen Sie dann den Gang gerade aus."
-        elif (30 <= nummer <= 35):
+        elif (30 <= nummer <= 42):
             wegbeschreibung = "Gehen Sie dann den Gang nach links."
 
         return wegbeschreibung

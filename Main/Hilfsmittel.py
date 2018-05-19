@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
-import csv, sys
+import csv
+import sys
 import Klassen
 import Hilfsmittel
 import time
 import qi
+import Konstanten
 import Konstanten
 
 class CSVReader(object):
@@ -78,7 +80,9 @@ class Bild(object):
         tblService = self.__tabletService
         #pfadPDF = "http://10.1.1.68/apps/portierapp/pdfs/" + raumnummer + ".pdf"
         #tblService.showWebview(pfadPDF)
-        pfadImage = "http://10.1.1.68/apps/portierapp/images/" + raumnummer + ".jpg"
+        ri = Konstanten.RoboterInformationen()
+        ip = ri.getIP()
+        pfadImage = "http://" + ip + "/apps/portierapp/images/" + raumnummer + ".jpg"
         tblService.showImage(pfadImage)
 
     def verstecken(self):

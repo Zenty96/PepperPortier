@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 class RaumInformationen(object):
     def __init__(self, raumnummer, raumzweck, personen):
         self.__RaumNummer = raumnummer #ein Wert

@@ -8,7 +8,6 @@ import Interaktion
 import time
 
 def main():
-    rNum = '345' # Test
 
     verb = Verbindung.Verbindung();
     session = verb.aufbauen("German")

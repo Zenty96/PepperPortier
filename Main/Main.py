@@ -16,9 +16,14 @@ def main():
         print("Fehler beim Aufbauen der Verbindung")
         exit() # Beenden
 
+    begruessung = Interaktion.Begruessung(session)
+    begruessung.sageBegruessung()
+
     weiter = True
     counter = 0
+
     while(weiter):
+
         # Input vom Benutzer
         eingabe = Interaktion.Eingabe()
         nutzerEingabe = eingabe.getNutzerInput(counter)
@@ -29,6 +34,8 @@ def main():
             # zum Beenden der Schleife
             weiter = False
             print("Ende angefragt")
+            verabschiedung = Interaktion.Verabschiedung(session)
+            verabschiedung.sageVerabschiedung()
             exit()
 
         # Antwort von Pepper

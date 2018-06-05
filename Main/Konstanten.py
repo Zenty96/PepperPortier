@@ -9,3 +9,7 @@ class RoboterInformationen(object):
 
     def getPort(self):
         return self.__port
+
+class Zuhoerzeit(object):
+    def getZuhoerzeit(self):
+        return 6

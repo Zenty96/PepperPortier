@@ -5,6 +5,36 @@ import time
 import Hilfsmittel
 from naoqi import ALProxy
 
+class Begruessung(object):
+    def __init__(self, session):
+        self.__session = session
+
+    def sageBegruessung(self):
+
+        ri = Konstanten.RoboterInformationen()
+        tts = ALProxy("ALTextToSpeech", ri.getIP(), ri.getPort())
+
+        begr = Strings.Begruessung()
+        begruessung = begr.getBegruessung()
+
+        tts.say(begruessung)
+
+class Verabschiedung(object):
+    def __init__(self, session):
+        self.__session = session
+
+    def sageVerabschiedung(self):
+
+        ri = Konstanten.RoboterInformationen()
+        tts = ALProxy("ALTextToSpeech", ri.getIP(), ri.getPort())
+
+        begr = Strings.Verabschiedung()
+        begruessung = begr.getVerabschiedung()
+
+        tts.say(begruessung)
+
+
+
 class Antwort(object):
     def __init__(self, session):
         self.__session = session
@@ -22,7 +52,7 @@ class Antwort(object):
             var = Hilfsmittel.ListenOperationen()
             rNum = var.getRaumnummerZuPerson(eingabe)
             rNumString = var.formatiereRaumnummerZuString(rNum)
-            # TODO ganzer Name
+
             ein = Eingabe()
             ganzerName = ein.getGanzenNamen(eingabe)
             if (ganzerName.strip() != ""):
@@ -31,7 +61,7 @@ class Antwort(object):
         else:
             # Raumnummer -> Weitergabe
             rNum = eingabe
-            weg = weg + "Sie suchen den Raum mit der Nummer " + rNum + "..."
+            weg = weg + "Sie suchen den Raum mit der Nummer " + rNum + " ..."
 
         beschreibung = Strings.Wegbeschreibung()
         weg = weg + beschreibung.getWegbeschreibung(rNum)
@@ -67,7 +97,10 @@ class Eingabe(object):
         ri = Konstanten.RoboterInformationen()
         asr = self.__setVokabular(ri, counter)
         asr.subscribe("Portier_Test")
-        time.sleep(7)
+
+        # in dieser Zeit wartet Pepper auf einen Namen
+        zeit = Konstanten.Zuhoerzeit()
+        time.sleep(zeit.getZuhoerzeit())
 
         alm = ALProxy("ALMemory", ri.getIP(), ri.getPort())
         value = alm.getData("WordRecognized")[0]

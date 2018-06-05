@@ -66,3 +66,16 @@ class Wegbeschreibung(object):
             wegbeschreibung = wegbeschreibung + "..." + self.__getWeg(raumnummer)
 
         return wegbeschreibung
+
+class Begruessung(object):
+    def getBegruessung(self):
+        # "..." für Sprechpause
+        str = "Hallo..."
+        str = str + "Ich bin Pepper und helfe Ihnen, sich hier zurecht zu finden..."
+        str = str + "Fragen Sie mich nach einer Person oder Raumnummer und ich sage Ihnen den Weg."
+        return str
+
+class Verabschiedung(object):
+    def getVerabschiedung(self):
+        str = "Auf Wiedersehen."
+        return str
